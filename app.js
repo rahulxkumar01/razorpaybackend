@@ -5,7 +5,7 @@ const cors = require("cors");
 const Razorpay = require('razorpay');
 const bodyParser = require('body-parser');
 const path = require('path');
-const fs = require('fs');
+// const fs = require('fs');
 const { validateWebhookSignature } = require('razorpay/dist/utils/razorpay-utils');
 
 const app = express();
@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files
-app.use(express.static(path.join(__dirname)));
+// app.use(express.static(path.join(__dirname)));
 
 // Replace with your Razorpay credentials
 const razorpay = new Razorpay({
