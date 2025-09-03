@@ -28,23 +28,23 @@ const razorpay = new Razorpay({
 });
 
 // Function to read data from JSON file
-const readData = () => {
-  if (fs.existsSync('orders.json')) {
-    const data = fs.readFileSync('orders.json');
-    return JSON.parse(data);
-  }
-  return [];
-};
+// const readData = () => {
+//   if (fs.existsSync('orders.json')) {
+//     const data = fs.readFileSync('orders.json');
+//     return JSON.parse(data);
+//   }
+//   return [];
+// };
 
 // Function to write data to JSON file
-const writeData = (data) => {
-  fs.writeFileSync('orders.json', JSON.stringify(data, null, 2));
-};
+// const writeData = (data) => {
+//   fs.writeFileSync('orders.json', JSON.stringify(data, null, 2));
+// };
 
-// Initialize orders.json if it doesn't exist
-if (!fs.existsSync('orders.json')) {
-  writeData([]);
-}
+// // Initialize orders.json if it doesn't exist
+// if (!fs.existsSync('orders.json')) {
+//   writeData([]);
+// }
 
 // Route to handle order creation
 app.post('/create-order', async (req, res) => {
@@ -78,10 +78,10 @@ app.post('/create-order', async (req, res) => {
   }
 });
 
-// Route to serve the success page
-app.get('/payment-success', (req, res) => {
-  res.sendFile(path.join(__dirname, 'success.html'));
-});
+// // Route to serve the success page
+// app.get('/payment-success', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'success.html'));
+// });
 
 // Route to handle payment verification
 app.post('/verify-payment', (req, res) => {
