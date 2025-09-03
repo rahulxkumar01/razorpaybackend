@@ -1,3 +1,4 @@
+require("dotenv").config();
 
 const express = require('express');
 const cors = require("cors");
@@ -22,8 +23,8 @@ app.use(express.static(path.join(__dirname)));
 
 // Replace with your Razorpay credentials
 const razorpay = new Razorpay({
-  key_id: 'rzp_test_RAJ2X25G9DUz9s',
-  key_secret: 'W2ghJMvE7SXa1UhNswqSmGBW',
+  key_id: process.env.KEY_ID,//'rzp_test_RAJ2X25G9DUz9s',
+  key_secret: process.env.KEY_SECRET,//'W2ghJMvE7SXa1UhNswqSmGBW',
 });
 
 // Function to read data from JSON file
